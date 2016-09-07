@@ -8,20 +8,40 @@ function executeThisCodeWhenChunksArrive () {
 function executeThisCodeAfterFileLoaded () {
   var data = JSON.parse(this.response);
   var contentEl = document.getElementById("output-products")
-  var productData = "";
+  var productData = "<div class='container'>";
+
   var currentProduct;
 
   for (var i = 0; i < data.products.length; i++) {
     currentProduct = data.products[i]
     console.log(currentProduct)
 
+    if (i%2 === 0) {
+      productData += "<div class ='row'>"
+    }
 
-    productData += "<div id='product-contain'>";
-    productData += `<h6>${currentProduct.name}</h6>`;
+    productData += "<div class='col s12 m5"
+
+    if (i%2 !== 0) {
+      productData += " offset-m2"
+    }
+
+    productData += " card blue-grey darken-1 card-content white-text'>";
+
+    productData += `<span class='card-title'>${currentProduct.name}</span>`;
+    productData += `<p>${currentProduct.price}</p>`;
+
     productData += "</div>";
 
+    if (i%2 !== 0) {
+      productData += "</div>"
+    }
+
   }
+
+  productData += "</div>"
   contentEl.innerHTML = productData;
+
 }
 
 
