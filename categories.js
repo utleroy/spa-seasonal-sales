@@ -1,25 +1,32 @@
 var Original = (function(categories) {
 
-function executeThisCodeIfXHRFails () {
-  console.log("An error occurred while transferring");
-}
-function executeThisCodeWhenChunksArrive () {
-}
-function executeThisCodeAfterFileLoaded () {
-  var data = JSON.parse(this.response);
-  var contentEl = document.getElementById("output-categories")
-  var caregoriesData = "<div class='container'>";
-  var currentcaregories;
-  for (var i = 0; i < data.caregoriess.length; i++) {
-    currentcaregories = data.caregoriess[i]
+  function executeThisCodeIfXHRFails () {
+    console.log("An error occurred while transferring");
+  }
+  function executeThisCodeWhenChunksArrive () {
+  }
+  function executeThisCodeAfterFileLoaded () {
+    var catData = JSON.parse(this.response);
+    var categoriesEl = document.getElementById("output-categories")
+    var categoriesData = "<div class='container'>";
+    var currentCategories;
+    for (var i = 0; i < catData.categories.length; i++) {
+      currentCategories = catData.categories[i]
+      console.log(currentCategories)
 
-    categoriesData += `<div class="cata">${currentcategories.name}</div>`
-    console.log(currentcaregories)
+      categoriesData += `<ul class='collapsible' data-collapsible='accordion'><li><div class='collapsible-header'>${currentCategories.name}</div><div class='collapsible-body'><p></p></div></li></ul>`;
+      // categoriesData += "</ul>";
 
+      categoriesEl.innerHTML = categoriesData;
+      $('.collapsible').collapsible({
+    });
+    }
+    return categories;
+  }
 
+  var secondRequest = new XMLHttpRequest();
+secondRequest.addEventListener("load", executeThisCodeAfterFileLoaded); //Callback
+secondRequest.open("GET", "categories.JSON")
+secondRequest.send();
 
-
-
-  return categories
-}
-}(Original || {})
+})(Original || {})
