@@ -56,9 +56,12 @@ var Original = (function(categoriesAndProducts) {
     return categoriesAndProducts;
   }
 
+
   var secondRequest = new XMLHttpRequest();
   secondRequest.addEventListener("load", loadCategories);
   secondRequest.open("GET", "categories.JSON")
   secondRequest.send();
+
+
 
 })(Original || {})
