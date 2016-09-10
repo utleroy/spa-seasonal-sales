@@ -1,0 +1,13 @@
+.chip {
+  width:  150px;
+  color: white;
+  margin-top: 10px;
+}
+
+/*#output-categories {
+  width: 400px;
+}*/
+
+#price-text {
+  margin-left: 10px;
+}

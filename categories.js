@@ -22,16 +22,16 @@ var Original = (function(categoriesAndProducts) {
     for (var j = 0; j < catData.categories.length; j++) {
       currentCategories = catData.categories[j];
 
-
+      categoriesData += "<div class='row'><div class='col m4'>"
       categoriesData += "<ul class='collapsible' data-collapsible='accordion'>";
       categoriesData += "<li>";
       categoriesData += `<div class='collapsible-header'>${currentCategories.name}</div>`;
       categoriesData += "<div class='collapsible-body'>";
       for(var i = 0; i < data.products.length; i++) {
-        categoriesData += `<div class="chip lime">${data.products[i].name}</div><div>Price ${data.products[i].price}</div>`;
+        categoriesData += `<div class="chip lime darken-4"><i class="tiny material-icons" width="200px">label</i>${data.products[i].name}</div><div id="price-text">Price: ${data.products[i].price}</div>`;
       }
       categoriesData += `<p></p>`;
-      categoriesData += "</div></li></ul>";
+      categoriesData += "</div></li></ul></div></div";
 
       categoriesEl.innerHTML = categoriesData;
 
