@@ -57,5 +57,4 @@ var Original = (function(categoriesAndProducts) {
   secondRequest.send();
 
 
-
 })(Original || {})
