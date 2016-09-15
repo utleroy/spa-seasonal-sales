@@ -1,6 +1,7 @@
 var Original = (function(categoriesAndProducts) {
     var currentProduct;
     var currentCategories;
+    var season;
     var data = [];
 
   function loadProducts () {
@@ -28,8 +29,18 @@ var Original = (function(categoriesAndProducts) {
       categoriesData += `<div class='collapsible-header'>${currentCategories.name}</div>`;
       categoriesData += "<div class='collapsible-body'>";
       for(var i = 0; i < data.products.length; i++) {
-        categoriesData += `<div class="chip lime darken-4"><i class="tiny material-icons" width="200px">label</i>${data.products[i].name}</div><div id="price-text">Price: ${data.products[i].price}</div>`;
+
+        categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`<i class="tiny material-icons" width="200px">label`
+        categoriesData +=`</i>`
+        categoriesData +=`${data.products[i].name}`
+        categoriesData +=`</div>`
+        categoriesData +=`<div id="price-text">Price:`
+        categoriesData +=`${data.products[i].price}`
+        categoriesData +=`</div>`
       }
+
+
       categoriesData += `<p></p>`;
       categoriesData += "</div></li></ul></div></div";
 
