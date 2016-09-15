@@ -3,6 +3,13 @@ var Original = (function(categoriesAndProducts) {
     var currentCategories;
     var season;
     var data = [];
+    var catData = [];
+    // var productFromJson = {};
+
+    // function productCall() {
+    //   productFromJson = JSON.parse(this.response)
+    // }
+    //   console.log(productFromJson)
 
   function loadProducts () {
     data = JSON.parse(this.response);
@@ -17,7 +24,7 @@ var Original = (function(categoriesAndProducts) {
   }
 
   function loadCategories () {
-    var catData = JSON.parse(this.response);
+    catData = JSON.parse(this.response);
     var categoriesEl = document.getElementById("output-categories")
     var categoriesData = "<div class='container'>";
     for (var j = 0; j < catData.categories.length; j++) {
@@ -50,6 +57,7 @@ var Original = (function(categoriesAndProducts) {
     });
 
     }
+    console.log(catData);
     console.log(data);
     return categoriesAndProducts;
   }
