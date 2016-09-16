@@ -4,8 +4,9 @@ var Original = (function(categoriesAndProducts) {
     var season;
     var data = [];
     var catData = [];
+    var categorized = [];
 
-    // if products.category_id === [key]1 try something like this
+
 
   function loadProducts () {
     data = JSON.parse(this.response);
@@ -41,6 +42,14 @@ var Original = (function(categoriesAndProducts) {
         categoriesData +=`<div id="price-text">Price:`
         categoriesData +=`${data.products[i].price}`
         categoriesData +=`</div>`
+        for (var i = 0; i < data.products.length; i++) {
+          var categorized = data.products[i].category_id;
+      console.log(categorized)
+        }
+        if (data.products.category_id === 1) {
+          categorized += '<div>${category_id}</div>'
+    }
+          console.log(categorized)
       }
 
 
