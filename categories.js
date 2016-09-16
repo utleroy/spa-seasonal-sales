@@ -4,12 +4,8 @@ var Original = (function(categoriesAndProducts) {
     var season;
     var data = [];
     var catData = [];
-    // var productFromJson = {};
 
-    // function productCall() {
-    //   productFromJson = JSON.parse(this.response)
-    // }
-    //   console.log(productFromJson)
+    // if products.category_id === [key]1 try something like this
 
   function loadProducts () {
     data = JSON.parse(this.response);
