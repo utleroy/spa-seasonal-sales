@@ -28,17 +28,22 @@ function loadCategories () {
 
     currentCategories = catData.categories[j];
     
-    categoriesData += "<div class='row'><div class='col m4'>"
+    categoriesData += "<div class='row'><span class='col m4'>"
     categoriesData += "<ul class='collapsible' data-collapsible='accordion'>";
     categoriesData += "<li>";
+    if (catData.categories[i] === 1) {
     categoriesData += `<div class='collapsible-header'>${currentCategories.name}</div>`;
-    categoriesData += "<div class='collapsible-body'>";
+    categoriesData += "<div class='collapsible-body'>";}
     for(var i = 0; i < data.products.length; i++) {
 
       categoriesData +=`<div class="chip lime darken-4">`
       categoriesData +=`<i class="tiny material-icons" width="200px">label`
       categoriesData +=`</i>`
+      if (data.products[i].category_id === 1) {
+        categoriesData += `${currentCategories.name}`;
       categoriesData +=`${data.products[i].name}`
+      categoriesData +=`${data.products[i].id}`
+    }
       categoriesData +=`</div>`
       categoriesData +=`<div id="price-text">Price:`
       categoriesData +=`${data.products[i].price}`
