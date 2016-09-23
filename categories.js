@@ -43,8 +43,13 @@ function loadCategories () {
         categoriesData += `${currentCategories.name}`;
       categoriesData +=`${data.products[i].name}`
       categoriesData +=`${data.products[i].id}`
-    }
+    } if (data.products[i].category_id === 2) {
+        categoriesData += `${currentCategories.name}`;
+      categoriesData +=`${data.products[i].name}`
+      categoriesData +=`${data.products[i].id}`
       categoriesData +=`</div>`
+    }
+
       categoriesData +=`<div id="price-text">Price:`
       categoriesData +=`${data.products[i].price}`
       categoriesData +=`</div>`
