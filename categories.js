@@ -31,36 +31,39 @@ function loadCategories () {
     categoriesData += "<div class='row'><span class='col m4'>"
     categoriesData += "<ul class='collapsible' data-collapsible='accordion'>";
     categoriesData += "<li>";
-    if (catData.categories[i] === 1) {
     categoriesData += `<div class='collapsible-header'>${currentCategories.name}</div>`;
-    categoriesData += "<div class='collapsible-body'>";}
+    categoriesData += "<div class='collapsible-body'>";
     for(var i = 0; i < data.products.length; i++) {
 
-      categoriesData +=`<div class="chip lime darken-4">`
-      categoriesData +=`<i class="tiny material-icons" width="200px">label`
-      categoriesData +=`</i>`
       if (data.products[i].category_id === 1) {
-        categoriesData += `${currentCategories.name}`;
-      categoriesData +=`${data.products[i].name}`
-      categoriesData +=`${data.products[i].id}`
-    } if (data.products[i].category_id === 2) {
-        categoriesData += `${currentCategories.name}`;
-      categoriesData +=`${data.products[i].name}`
-      categoriesData +=`${data.products[i].id}`
-      categoriesData +=`</div>`
+        categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`${data.products[i].name}`
+        categoriesData +=`<div id="price-text">`
+        categoriesData +=`${data.products[i].price}`
+        categoriesData +=`</div>`
+
+      } if (data.products[i].category_id === 2) {
+        categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`${data.products[i].name}`
+        categoriesData +=`<div id="price-text">`
+        categoriesData +=`${data.products[i].price}`
+        categoriesData +=`</div>`
+
+      } if (data.products[i].category_id === 3) {
+        categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`${data.products[i].name}`
+        categoriesData +=`<div id="price-text">`
+        categoriesData +=`${data.products[i].price}`
+        categoriesData +=`</div>`
+      }
+
+
     }
-
-      categoriesData +=`<div id="price-text">Price:`
-      categoriesData +=`${data.products[i].price}`
-      categoriesData +=`</div>`
-
-    categoriesData += `<p></p>`;
-    }
-    categoriesData += "</div></li></ul></div>";
+      categoriesData += `</div></li></ul></div>`;
 
 
 
-    categoriesEl.innerHTML = categoriesData;
+      categoriesEl.innerHTML = categoriesData;
 
       $('.collapsible').collapsible({ //used to initialize after the "categoriesData" is dynamically added
     });
