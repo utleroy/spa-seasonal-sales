@@ -28,35 +28,35 @@ function loadCategories () {
 
     currentCategories = catData.categories[j];
     
-    categoriesData += "<div class='row'><span class='col m4'>"
+    categoriesData += "<div class='row'><span class='col m6'>"
     categoriesData += "<ul class='collapsible' data-collapsible='accordion'>";
     categoriesData += "<li>";
     categoriesData += `<div class='collapsible-header'>${currentCategories.name}</div>`;
     categoriesData += "<div class='collapsible-body'>";
     for(var i = 0; i < data.products.length; i++) {
 
-      if (data.products[i].category_id === 1) {
-        categoriesData +=`<div class="chip lime darken-4">`
-        categoriesData +=`${data.products[i].name}`
-        categoriesData +=`<div id="price-text">`
-        categoriesData +=`${data.products[i].price}`
-        categoriesData +=`</div>`
+      if (data.products[i].category_id === 1 && currentCategories.name === "Apparel") {
+    //     categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
+    //     categoriesData +=`${data.products[i].price}`
+    //     categoriesData +=`</div>`
+}
+       if (data.products[i].category_id === 2 && currentCategories.name === "Furniture") {
+    //     categoriesData +=`<div class="chip lime darken-4">`
+        categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
+    //     categoriesData +=`<div id="price-text">`
+    //     categoriesData +=`${data.products[i].price}`
+    //     categoriesData +=`</div>`
 
-      } if (data.products[i].category_id === 2) {
-        categoriesData +=`<div class="chip lime darken-4">`
-        categoriesData +=`${data.products[i].name}`
-        categoriesData +=`<div id="price-text">`
-        categoriesData +=`${data.products[i].price}`
-        categoriesData +=`</div>`
-
-      } if (data.products[i].category_id === 3) {
-        categoriesData +=`<div class="chip lime darken-4">`
-        categoriesData +=`${data.products[i].name}`
-        categoriesData +=`<div id="price-text">`
-        categoriesData +=`${data.products[i].price}`
-        categoriesData +=`</div>`
-      }
-
+    //   } if (data.products[i].category_id === 3) {
+    //     categoriesData +=`<div class="chip lime darken-4">`
+    //     categoriesData +=`${data.products[i].name}`
+    //     categoriesData +=`<div id="price-text">`
+    //     categoriesData +=`${data.products[i].price}`
+    //     categoriesData +=`</div>`
+      } if (data.products[i].category_id === 3 && currentCategories.name === "Household") {
+        categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
+}
 
     }
       categoriesData += `</div></li></ul></div>`;
