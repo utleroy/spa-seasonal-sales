@@ -7,6 +7,8 @@ var Original = (function(categoriesAndProducts) {
   var categorized = [];
 
 
+
+
 // function to load the products from the json file. The loadProducts() is called in the XHR call "var myRequest"
 
 
@@ -16,7 +18,7 @@ function loadProducts () {
   for (var i = 0; i < data.products.length; i++) {
     currentProduct = data.products[i]
   }
-
+console.log("test")
 }
 
 function loadCategories () {
@@ -38,9 +40,9 @@ function loadCategories () {
         categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
       } if (data.products[i].category_id === 2 && currentCategories.name === "Furniture") {
         categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
-      } else if (data.products[i].category_id === 3 && currentCategories.name === "Household") {
+      } if (data.products[i].category_id === 3 && currentCategories.name === "Household") {
         categoriesData +=`<span class="chip lime darken-4">${data.products[i].name}${data.products[i].price}</span>`
-      }
+      } 
 
     }
     categoriesData += `</span></li></ul></div>`;

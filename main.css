@@ -23,10 +23,10 @@ margin-left: 15px;
   color: gray;
 }
 
-/*#price-text {
+#price-text {
   margin-left: 15px;
   color: black; 
-}*/
+}
 
 .btn, .btn-large, .btn-flat {
     float: right;
@@ -41,10 +41,3 @@ margin-left: 15px;
 .collapsible {
   background-color: white
 }
-/*.col m4 {
-  display: inline-block;
-
-}*/
-/*.output-categories {
-  display: inline-block;
-}*/
