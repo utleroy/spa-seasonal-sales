@@ -6,7 +6,9 @@ var Original = (function(categoriesAndProducts) {
   var catData = [];
   var categorized = [];
 
-
+//need to add eventhandlers to select fields
+// winter // autumn // spring //
+// need to assign seasonal discounts
 
 
 // function to load the products from the json file. The loadProducts() is called in the XHR call "var myRequest"
